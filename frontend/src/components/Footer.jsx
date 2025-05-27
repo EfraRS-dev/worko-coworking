@@ -5,14 +5,14 @@ export default function Footer() {
     <footer className="bg-gray-100 mt-16 px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-4 text-sm text-gray-700">
       <div className='mr-24'>
         <p>Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-        <div className="flex space-x-2 mt-2 text-xl">
+        <div className="flex space-x-2 mt-2 text-xl text-teal-600">
           <i className="ti ti-brand-facebook-filled"></i>
           <i className="ti ti-brand-instagram-filled"></i>
           <i className="ti ti-brand-google-filled"></i>
         </div>
       </div>
       <div className="">
-        <h3 className="font-bold mb-2">Home</h3>
+        <h3 className="font-bold mb-2 text-teal-600">Home</h3>
         <ul>
           <li>Booking</li>
           <li>Articles</li>
@@ -21,7 +21,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h3 className="font-bold mb-2">Help</h3>
+        <h3 className="font-bold mb-2 text-teal-600">Help</h3>
         <ul>
           <li>About us</li>
           <li>Help center</li>
@@ -30,7 +30,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <h3 className="font-bold mb-2">Get the app</h3>
+        <h3 className="font-bold mb-2 text-teal-600">Get the app</h3>
         <ul>
           <li>iOS app</li>
           <li>Android app</li>

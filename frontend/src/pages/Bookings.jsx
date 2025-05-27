@@ -29,8 +29,8 @@ export default function Bookings() {
           </div>
         </div>
 
-        <div class="grid grid-cols-6 gap-8">
-          <div class="col-span-4">
+        <div className="grid grid-cols-6 gap-8">
+          <div className="col-span-4">
             {/* Description */}
             <section className="mt-6">
               <h2 className="font-semibold text-lg mb-2">Sala de Reuniones</h2>
@@ -43,16 +43,16 @@ export default function Bookings() {
             </section>
 
             {/* Amenities */}
-            <section className="mt-6">
+            <section className="mt-8">
               <h2 className="font-semibold text-lg mb-2">Servicios Ofrecidos con la Sala</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm text-gray-700">
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Vista Exterior</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Café o Snacks Incluidos</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Wifi</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Seguridad en la Sala</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Televisor</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Lockers</span>
-                <span className="flex gap-2"><i class="ti ti-check text-xl"></i> Aire Acondicionado</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Vista Exterior</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Café o Snacks Incluidos</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Wifi</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Seguridad en la Sala</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Televisor</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Lockers</span>
+                <span className="flex gap-2"><i className="ti ti-check text-xl"></i> Aire Acondicionado</span>
               </div>
             </section>
           </div>
@@ -64,23 +64,23 @@ export default function Bookings() {
 
             <div className="mt-4">
               <div className="grid grid-cols-2">
-                <div className="border rounded-t-xl rounded-r-none rounded-b-none">
+                <div className="border border-gray-400 border-r-0 rounded-t-xl rounded-r-none rounded-b-none">
                   <label className="text-sm font-medium block p-2 pb-0">TIME-IN</label>
                   <input type="time" defaultValue="08:00" className="w-full p-2 pt-0" />
                 </div>
 
-                <div className="border rounded-t-xl rounded-l-none rounded-b-none">
+                <div className="border border-gray-400 rounded-t-xl rounded-l-none rounded-b-none">
                   <label className="text-sm font-medium block p-2 pb-0">TIME-OUT</label>
                   <input type="time" defaultValue="12:00" className="w-full p-2 pt-0" />
                 </div>
 
-                <div className="col-span-2 border rounded-b-xl rounded-t-none">
+                <div className="col-span-2 border border-gray-400 border-t-0 rounded-b-xl rounded-t-none">
                   <label className="text-xs font-medium block p-2 pb-0">DÍA</label>
                   <input type="date" defaultValue="2025-10-02" className="text-sm w-full p-2 pt-0" />
                 </div>
               </div>
 
-              <button className="bg-green-600 mt-4 text-white w-full py-2 rounded hover:bg-green-700 transition">Reservar</button>
+              <button className="bg-teal-600 mt-4 text-white w-full py-2 rounded-xl mb-4">Reservar</button>
 
               <span className="flex font-medium justify-center text-sm text-gray-400">Detalles del Pago</span>
               <ul className="mt-2 space-y-1">
@@ -104,8 +104,8 @@ export default function Bookings() {
                   <span>IVA</span>
                   <span>$23.370</span>
                 </li>
-                <li className='flex justify-between border-t border-gray-400 mt-4 pt-4'>
-                  <span className="font-semibold">Total</span>
+                <li className='flex font-semibold justify-between border-t border-gray-400 mt-4 pt-4'>
+                  <span>Total</span>
                   <span>$146.370</span>
                 </li>
               </ul>
@@ -117,27 +117,27 @@ export default function Bookings() {
         </div>
         <div>
           {/* Reviews */}
-          <section className="mt-8 flex flex-col gap-8">
-            <h2 className="font-semibold text-lg mb-4">⭐ 4.8 · 7 reseñas</h2>
-            <div className="grid md:grid-cols-2 gap-16">
+          <section className="mt-8 flex flex-col gap-16">
+            <div className="grid md:grid-cols-2 gap-2 gap-x-12">
+            <h2 className="font-semibold col-span-2 text-lg mb-4">⭐ 4.8 · 7 reseñas</h2>
               <div className='flex flex-col gap-4'>
                 <p className="text-sm flex justify-between">
                   <span>
                   Limpieza
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
                 <p className="text-sm flex justify-between">
                   <span>
                     Calidad del Mobiliario
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
                 <p className="text-sm flex justify-between">
                   <span>
                     Conectividad
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
               </div>
               <div className='flex flex-col gap-4'>
@@ -145,19 +145,19 @@ export default function Bookings() {
                   <span>
                     Equipamiento tecnológico
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
                 <p className="text-sm flex justify-between">
                   <span>
                     Valor
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
                 <p className="text-sm flex justify-between">
                   <span>
                     Privacidad acústica
                   </span>
-                  <span>5.0</span>
+                  <span className="font-semibold">5.0</span>
                 </p>
               </div>
             </div>

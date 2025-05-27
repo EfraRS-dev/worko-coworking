@@ -2,6 +2,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
 
 const Spaces = () => {
   return (
@@ -9,28 +10,27 @@ const Spaces = () => {
       <Header />
       <main className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
         {/* Filtros superiores */}
-        <section className="col-span-4 flex shadow-md">
-          <div className="grid grid-cols-1 md:grid-cols-4 border border-gray-400 rounded rounded-r-none">
-            <div className="px-4 my-3">
-              <label className="flex gap-2"><i class="ti ti-calendar-week-filled text-green-700 text-2xl"></i>Día</label>
-              <input type="date" className=" w-full" defaultValue="2021-06-10" />
+        <section className="flex shadow-md col-span-4 bg-white rounded-xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 rounded-r-none">
+            <div className="px-6 my-3">
+              <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-calendar-week-filled text-2xl"></i>Día</label>
+              <input type="date" className="" defaultValue="2021-06-10" />
             </div>
-            <div className="px-4 my-3 border-l">
-              <label className="flex gap-2"><i class="ti ti-clock-hour-7-filled text-green-700 text-2xl"></i>Time In</label>
-              <input type="time" className="w-full" defaultValue="10:00" />
+            <div className="px-4 my-3 border-l border-gray-400">
+              <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Time In</label>
+              <input type="time" className="" defaultValue="10:00" />
             </div>
-            <div className="px-4 my-3 border-l">
-              <label className="flex gap-2"><i class="ti ti-clock-hour-7-filled text-green-700 text-2xl"></i>Time Out</label>
-              <input type="time" className="w-full" defaultValue="12:00" />
+            <div className="px-4 my-3 border-l border-gray-400">
+              <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Time Out</label>
+              <input type="time" className="" defaultValue="12:00" />
             </div>
-            <div className="px-4 my-3 border-l">
-              <label className="flex gap-2"><i class="ti ti-user-filled text-green-700 text-2xl"></i>Capacidad</label>
-              <input type="number" className="w-full" defaultValue={4} min={1} />
+            <div className="px-4 my-3 border-l border-gray-400">
+              <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-user-filled text-2xl"></i>Capacidad</label>
+              <input type="number" className="" defaultValue={4} min={1} />
             </div>
           </div>
-
-          <button className="text-xl bg-green-600 text-white rounded rounded-l-none px-14 w-full md:w-auto">
-            <i class="ti ti-search"></i>Buscar
+          <button className="cursor-pointer text-xl bg-teal-600 text-white rounded-xl rounded-l-none px-12 w-full md:w-auto flex items-center gap-2">
+            <i className="ti ti-search"></i>Buscar
           </button>
         </section>
         {/* Filtros */}
@@ -63,7 +63,7 @@ const Spaces = () => {
                     <span>Opción {i + 1}</span>
                   </label>
                 ))}
-                <button className="text-green-600 text-sm mt-1">Mostrar Más</button>
+                <button className="text-teal-600 text-sm mt-1">Mostrar Más</button>
               </div>
             </div>
           ))}
@@ -84,13 +84,13 @@ const Spaces = () => {
               title: "Rincón Productivo",
               subtitle: "Sala de Trabajo",
               price: 120000,
-              image: "room1.png",
+              image: "room2.png",
             },
             {
               title: "Mente Colectiva",
               subtitle: "Sala de Reuniones",
               price: 50000,
-              image: "room1.png",
+              image: "room3.png",
             },
             {
               title: "Torre de Ideas",
@@ -102,21 +102,17 @@ const Spaces = () => {
               title: "Rincón de Acción",
               subtitle: "Sala de Reuniones",
               price: 40000,
-              image: "room1.png",
+              image: "room2.png",
             },
             {
               title: "Inspiración Constante",
               subtitle: "Sala de Estudio",
               price: 20000,
-              image: "room1.png",
+              image: "room3.png",
             },
           ].map((space, idx) => (
-            <div key={idx} className="flex rounded overflow-hidden shadow-md">
-              <img
-                src={space.image}
-                alt={space.title}
-                className="w-40 h-40 object-cover flex-shrink-0"
-              />
+            <Link to="/bookings" key={idx} className="flex rounded overflow-hidden shadow-md">
+              <img src={space.image} alt={space.title} className="w-40 h-40 object-cover flex-shrink-0" />
               <div className="p-4 flex flex-col justify-between w-full">
                 <div>
                   <h3 className="text-gray-600 text-sm">{space.subtitle}</h3>
@@ -127,7 +123,7 @@ const Spaces = () => {
                 </div>
                 <div className="flex justify-between items-center mt-2">
                   <span className="text-sm text-gray-500">5.0 ⭐ (318 reviews)</span>
-                  <span className="text-gray-500sss">
+                  <span className="text-gray-500">
                     ${space.price.toLocaleString()}
                     <span className="text-sm">
                       /Hora
@@ -135,12 +131,12 @@ const Spaces = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
 
           <div className="text-center">
-            <button className="bg-green-600 text-white px-6 py-2 rounded mt-4">
-              Más resultados <i class="ti ti-chevron-right"></i>
+            <button className="bg-teal-600 text-white px-6 py-2 rounded mt-4">
+              Más resultados <i className="ti ti-chevron-right"></i>
             </button>
           </div>
         </section>
