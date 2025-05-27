@@ -1,36 +1,51 @@
 version: '3.8'
+
 services:
-  frontend:
-    build: ./frontend
+  db:
+    image: postgres:15
+    container_name: worko_db
+    restart: always
+    environment:
+      POSTGRES_USER: worko_user
+      POSTGRES_PASSWORD: worko_pass
+      POSTGRES_DB: worko_db
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "3000:80"
-    depends_on:
-      - backend
+      - "5432:5432"
+    networks:
+      - worko_net
 
   backend:
     build: ./backend
+    container_name: worko_backend
+    restart: always
+    environment:
+      DB_HOST: db
+      DB_USER: worko_user
+      DB_PASSWORD: worko_pass
+      DB_NAME: worko_db
+      DB_PORT: 5432
+      JWT_SECRET: clave_super_secreta
+      PORT: 5000
     ports:
       - "5000:5000"
     depends_on:
       - db
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=worko_db
+    networks:
+      - worko_net
 
-  db:
-    image: postgres:15
+  frontend:
+    build: ./frontend
+    container_name: worko_frontend
     restart: always
     ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_DB: worko_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      - "5173:5173"
+    depends_on:
+      - backend
+    networks:
+      - worko_net
 
-volumes:
-  postgres_data:
+networks:
+  worko_net:
+    driver: bridge
