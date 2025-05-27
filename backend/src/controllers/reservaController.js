@@ -1,4 +1,4 @@
-const { crearReserva, listarReservas } = require('../models/reservaModel');
+const { crearReserva, listarReservas, obtenerReservasPorUsuario, obtenerReservaPorId } = require('../models/reservaModel');
 
 exports.nuevaReserva = async (req, res) => {
   try {
@@ -17,3 +17,5 @@ exports.obtenerReservas = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+

@@ -3,7 +3,9 @@ const { nuevaReserva, obtenerReservas } = require('../controllers/reservaControl
 const authenticateToken = require('../middlewares/auth');
 const router = express.Router();
 
-router.post('/', authenticateToken, nuevaReserva);
-router.get('/', authenticateToken, obtenerReservas);
+// router.post('/', authenticateToken, nuevaReserva);
+router.post('/', nuevaReserva);
+// router.get('/', authenticateToken, obtenerReservas);
+router.get('/', obtenerReservas);
 
 module.exports = router;

@@ -14,4 +14,12 @@ const listarEspacios = async () => {
   return result.rows;
 };
 
-module.exports = { crearEspacio, listarEspacios };
+const obtenerEspacioPorId = async (id) => {
+  const result = await db.query(
+    `SELECT * FROM espacio WHERE id = $1`,
+    [id]
+  );
+  return result.rows[0];
+};
+
+module.exports = { crearEspacio, listarEspacios, obtenerEspacioPorId };

@@ -3,7 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 const userRoutes = require('./routes/userRoutes');
-const reservaRoutes = require('./routes/reservaRoutes');
+const reservaRoutes = require('./routes/reservasRoutes');
 const espacioRoutes = require('./routes/espacioRoutes');
 
 const app = express();
