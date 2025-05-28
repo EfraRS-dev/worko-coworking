@@ -6,8 +6,8 @@ services:
     container_name: worko_db
     restart: always
     environment:
-      POSTGRES_USER: worko_user
-      POSTGRES_PASSWORD: worko_pass
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: worko_db
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -22,8 +22,8 @@ services:
     restart: always
     environment:
       DB_HOST: db
-      DB_USER: worko_user
-      DB_PASSWORD: worko_pass
+      DB_USER: postgres
+      DB_PASSWORD: postgres
       DB_NAME: worko_db
       DB_PORT: 5432
       JWT_SECRET: clave_super_secreta

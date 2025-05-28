@@ -36,19 +36,24 @@ CREATE TABLE reserva (
 );
 
 -- Seed data for usuarios (users)
--- Note: passwords are hashed with bcrypt, both are 'password123'
 INSERT INTO usuario (name, email, password, type) VALUES 
 ('Admin User', 'admin@worko.com', '$2a$10$xVR.Lc9b0nP.z6JmGLGIZu9XDTLlzJ8Ld5zBJT1RBumZ1tpNtjB1a', 'admin'),
-('Regular User', 'user@worko.com', '$2a$10$xVR.Lc9b0nP.z6JmGLGIZu9XDTLlzJ8Ld5zBJT1RBumZ1tpNtjB1a', 'user');
+('Regular User', 'user@worko.com', '$2a$10$xVR.Lc9b0nP.z6JmGLGIZu9XDTLlzJ8Ld5zBJT1RBumZ1tpNtjB1a', 'user'),
+('Efrain Rada', 'eradaa@uninorte.edu.co', '$2b$10$jvBeds3fKjHdIvgJq2JIc.bGnCLrmJJ1ZP4mHKYqfYVJkxTk/EV42', 'admin');
+-- Password from Rada is '12345678'
 
 -- Seed data for espacios (spaces)
 INSERT INTO espacio (name, type, location, capacity, cost_per_hour) VALUES 
-('Sala de Conferencias A', 'sala', 'Piso 1, Ala Norte', 20, 50.00),
-('Sala de Reuniones B', 'sala', 'Piso 2, Ala Sur', 8, 30.00),
-('Escritorio Individual 1', 'escritorio', 'Zona Abierta, Piso 1', 1, 10.00),
-('Área Colaborativa', 'otro', 'Terraza, Piso 3', 12, 25.00);
+('Sala de Conferencias A', 'sala', 'Piso 1, Ala Norte', 20, 150000.00),
+('Sala de Reuniones B', 'sala', 'Piso 2, Ala Sur', 8, 85000.00),
+('Escritorio Individual 1', 'escritorio', 'Zona Abierta, Piso 1', 1, 25000.00),
+('Area Colaborativa', 'otro', 'Terraza, Piso 3', 12, 70000.00),
+('Sala de Estudio', 'sala', 'Piso 1, Ala Este', 15, 120000.00),
+('Sala de Proyectos', 'sala', 'Piso 2, Ala Oeste', 10, 95000.00),
+('Escritorio Compartido', 'escritorio', 'Zona Abierta, Piso 2', 1, 20000.00),
+('Laboratorio de Innovación', 'otro', 'Universidad del Norte', 20, 130000.00);
+
 
 -- Seed data for reservas (reservations)
--- Creating a reservation for tomorrow from 10am to 12pm
 INSERT INTO reserva (id_usuario, id_espacio, date, starttime, endtime) VALUES 
 (2, 1, CURRENT_DATE + INTERVAL '1 day', '10:00:00', '12:00:00');
