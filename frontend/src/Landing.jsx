@@ -15,7 +15,7 @@ export default function Landing() {
               <h2 className="text-5xl font-semibold mb-4">Encuentra tu espacio ideal</h2>
               <p className="mb-4 text-gray-600">Explora y reserva espacios de trabajo, salas de reuniones y equipos tecnológicos según tus necesidades.</p>
               <button className="flex items-center font-semibold text-teal-600 mb-6 gap-2">
-                <i className="ti ti-player-play-filled bg-white p-2 rounded-full"></i> Watch video
+                <i className="ti ti-player-play-filled bg-white p-2 rounded-full"></i> Ver video
               </button>
             </div>
           </div>
@@ -26,11 +26,11 @@ export default function Landing() {
                 <input type="date" className="" defaultValue="2021-06-10" />
               </div>
               <div className="px-4 my-3 border-l border-gray-400">
-                <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Time In</label>
+                <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Hora ingreso</label>
                 <input type="time" className="" defaultValue="10:00" />
               </div>
               <div className="px-4 my-3 border-l border-gray-400">
-                <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Time Out</label>
+                <label className="flex gap-2 text-teal-800 font-semibold"><i className="ti ti-clock-hour-7-filled text-2xl"></i>Hora salida</label>
                 <input type="time" className="" defaultValue="12:00" />
               </div>
               <div className="px-4 my-3 border-l border-gray-400">
@@ -48,7 +48,7 @@ export default function Landing() {
         {/* Espacios Populares */}
         <section className="py-16">
           <h3 className="text-2xl font-bold mb-2">Nuestras Salas y Espacios más populares</h3>
-          <p className="text-gray-600 mb-6">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          <p className="text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu est in libero dignissim ultricies et eget lectus. Integer et consequat dui, eget hendrerit libero. Fusce id sapien vitae diam iaculis aliquet a sed tellus. Donec lorem augue, condimentum eu mauris eu, consequat pulvinar mauris. In hac habitasse platea dictumst.</p>
           <div className="grid md:grid-cols-3 gap-6">
             {['Mente Maestra', 'Buenas Decisiones', 'Refugio de Ideas'].map((name, idx) => (
               <div key={idx} className="bg-white shadow rounded-xl overflow-hidden">
@@ -101,10 +101,10 @@ export default function Landing() {
                   <img src="/user.jpg" className="size-10 rounded-full" alt="" />
                   <div>
                     <h4 className="font-semibold text-sm">{name}</h4>
-                    <p className="text-xs text-gray-500">{i % 2 === 0 ? 'Marketing Coordinator' : 'Web Designer'}</p>
+                    <p className="text-xs text-gray-500">{i % 2 === 0 ? 'Coordinador de Mercadeo' : 'Diseñador Web'}</p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600">Great Work! Increíble experiencia...</p>
+                <p className="text-sm text-gray-600">Gran Trabajo! Increíble experiencia...</p>
                 <div className="text-yellow-400 mt-2">★★★★☆ 4.8</div>
               </div>
             ))}

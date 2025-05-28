@@ -169,7 +169,7 @@ export default function Bookings() {
                     <img src="/user.jpg" className="size-10 rounded-full" alt="" />
                     <div>
                       <h4 className="font-semibold text-sm">{name}</h4>
-                      <p className="text-xs text-gray-500">{i < 2 ? 'December 2021' : 'November 2021'}</p>
+                      <p className="text-xs text-gray-500">{i < 2 ? 'Diciembre 2021' : 'Noviembre 2021'}</p>
                     </div>
                   </div>
                   <p className="text-sm text-gray-600">Cómoda y bien equipada. Perfecta para reuniones pequeñas.</p>

@@ -7,7 +7,7 @@ export default function PasswordInput() {
     <div className="relative">
       <input
         type={showPassword ? "text" : "password"}
-        placeholder="Enter your password"
+        placeholder="Ingresa tu contraseña"
         className="w-full px-4 py-2 border border-gray-300 rounded-md pr-10"
       />
       <button

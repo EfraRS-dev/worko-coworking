@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
 
-const Spaces = () => {
+const Booked = () => {
   return (
     <>
       <Header />
@@ -147,4 +147,4 @@ const Spaces = () => {
   );
 };
 
-export default Spaces;
+export default Booked;
