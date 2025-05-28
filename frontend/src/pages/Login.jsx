@@ -141,7 +141,7 @@ export default function Login() {
 
             <div className="mt-4 text-center">
               <span className="text-gray-600">Don't have an account? </span>
-              <Link to="/signup" className="text-green-600 hover:underline">Sign up</Link>
+              <Link to="/" className="text-green-600 hover:underline">Sign up</Link>
             </div>
 
             <div className="flex items-center justify-center gap-2 mb-4">

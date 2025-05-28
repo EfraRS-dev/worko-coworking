@@ -51,7 +51,9 @@ INSERT INTO espacio (name, type, location, capacity, cost_per_hour) VALUES
 ('Sala de Estudio', 'sala', 'Piso 1, Ala Este', 15, 120000.00),
 ('Sala de Proyectos', 'sala', 'Piso 2, Ala Oeste', 10, 95000.00),
 ('Escritorio Compartido', 'escritorio', 'Zona Abierta, Piso 2', 1, 20000.00),
-('Laboratorio de Innovación', 'otro', 'Universidad del Norte', 20, 130000.00);
+('Laboratorio de Innovación', 'otro', 'Universidad del Norte', 20, 130000.00),
+('Casa de Alberto Sandoval', 'otro', 'Villa Campestre', 100, 1000000.00),
+('Espacio de Coworking', 'otro', 'Piso 1, Zona Abierta', 30, 100000.00);
 
 
 -- Seed data for reservas (reservations)

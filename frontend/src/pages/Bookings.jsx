@@ -147,7 +147,7 @@ export default function Bookings() {
       
       // Reserva exitosa
       alert('¡Reserva realizada con éxito!');
-      navigate('/spaces');
+      navigate('/booked');
       
     } catch (err) {
       setReservationError(err.message);

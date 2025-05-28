@@ -45,4 +45,27 @@ const obtenerReservasPorUsuario = async (id_usuario) => {
   return result.rows;
 };
 
-module.exports = { crearReserva, listarReservas, obtenerReservasPorUsuario, obtenerReservaPorId };
+
+// Eliminar una reserva por ID
+const eliminarReserva = async (id) => {
+  const result = await db.query(
+    `DELETE FROM reserva WHERE id = $1 RETURNING *`,
+    [id]
+  );
+  return result.rows[0];
+};
+
+// Editar la fecha y horas de una reserva
+const editarReserva = async (id, { date, starttime, endtime }) => {
+  const result = await db.query(
+    `UPDATE reserva
+     SET date = $1, starttime = $2, endtime = $3
+     WHERE id = $4 RETURNING *`,
+    [date, starttime, endtime, id]
+  );
+  return result.rows[0];
+};
+
+
+module.exports = { crearReserva, listarReservas, obtenerReservasPorUsuario,
+   obtenerReservaPorId, eliminarReserva, editarReserva };
