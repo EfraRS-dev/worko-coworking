@@ -106,14 +106,14 @@ export default function Login() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="Ingresa tu correo electrónico"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md"
                 required
               />
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="block text-sm font-medium text-gray-700">Password</label>
+              <label className="block text-sm font-medium text-gray-700">Contraseña</label>
               <PasswordInput onChange={handlePasswordChange} />
 
               <div className="flex justify-between">
@@ -125,11 +125,11 @@ export default function Login() {
                     onChange={() => setRememberMe(!rememberMe)}
                     className="mr-2"
                   />
-                  <label htmlFor="remember" className="text-sm text-gray-600">Remember me</label>
+                  <label htmlFor="remember" className="text-sm text-gray-600">Recuérdame</label>
                 </div>
 
                 <div className="text-right text-sm mt-1">
-                  <Link to="/login" className="text-green-600 hover:underline">Forgot Password?</Link>
+                  <Link to="/login" className="text-green-600 hover:underline">¿Olvidaste tu contraseña?</Link>
                 </div>
               </div>
             </div>
@@ -138,12 +138,12 @@ export default function Login() {
               className="w-full bg-[#24AB70] text-white py-2 rounded-md"
               disabled={isLoading}
             >
-              {isLoading ? 'Logging in...' : 'Login'}
+              {isLoading ? 'Iniciando sesión...' : 'Iniciar sesión'}
             </button>
 
             <div className="mt-4 text-center">
-              <span className="text-gray-600">Don't have an account? </span>
-              <Link to="/" className="text-green-600 hover:underline">Sign up</Link>
+              <span className="text-gray-600">No tienes una cuenta? </span>
+              <Link to="/" className="text-green-600 hover:underline">Regístrate</Link>
             </div>
 
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -157,7 +157,7 @@ export default function Login() {
               className="w-full border border-gray-300 py-2 rounded-md flex items-center justify-center gap-2"
             >
               <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="h-5 w-5" />
-              <span className="text-black">Iniciar sesión Google</span>
+              <span className="text-black">Iniciar sesión con Google</span>
             </button>
           </form>
         </div>

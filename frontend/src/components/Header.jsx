@@ -34,12 +34,12 @@ export default function Header() {
           onClick={handleLogout}
           className="bg-red-500 text-white px-5 py-2 rounded-full hover:bg-red-600 transition-colors"
         >
-          Logout
+          Salir
         </button>
       ) : (
         <Link to="/login">
           <button className="bg-[#24AB70] text-white px-5 py-2 rounded-full hover:bg-[#1e8f5e] transition-colors">
-            Login
+            Iniciar sesión
           </button>
         </Link>
       )}

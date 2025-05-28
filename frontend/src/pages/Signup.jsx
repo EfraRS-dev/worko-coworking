@@ -38,7 +38,7 @@ export default function Signup() {
 
     // Validate password is present
     if (!formData.password) {
-      setError('Password is required')
+      setError('La contraseña es obligatoria.')
       setIsLoading(false)
       return
     }
@@ -55,11 +55,11 @@ export default function Signup() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.mensaje || 'Error during registration')
+        throw new Error(data.mensaje || 'Error durante el registro')
       }
 
       // Registration successful
-      alert('Registration successful! Please log in.')
+      alert('¡Registro exitoso! Por favor inicia sesión.')
       navigate('/login')
     } catch (err) {
       setError(err.message)
@@ -79,13 +79,13 @@ export default function Signup() {
 
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label className="block text-sm font-medium text-gray-700">Name</label>
+              <label className="block text-sm font-medium text-gray-700">Nombre</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Enter your name"
+                placeholder="Ingresa tu nombre"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md"
                 required
               />
@@ -98,14 +98,14 @@ export default function Signup() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="Ingresa tu correo electrónico"
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md"
                 required
               />
             </div>
 
             <div className="flex flex-col gap-1">
-              <label className="block text-sm font-medium text-gray-700">Password</label>
+              <label className="block text-sm font-medium text-gray-700">Contraseña</label>
               <PasswordInput onChange={handlePasswordChange} />
 
               <div className="flex justify-between">
