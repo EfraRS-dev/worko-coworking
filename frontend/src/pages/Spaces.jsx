@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Spaces = () => {
   const [spaces, setSpaces] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +26,7 @@ const Spaces = () => {
     const fetchSpaces = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/espacios');
+        const response = await fetch(`${API_URL}/api/espacios`);
 
         if (!response.ok) {
           throw new Error('No se pudieron cargar los espacios');

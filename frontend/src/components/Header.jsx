@@ -24,7 +24,7 @@ export default function Header() {
       <nav className="space-x-6 text-gray-700 font-medium">
         <Link to="/landing" className="hover:text-[#24AB70]">Inicio</Link>
         <Link to="/spaces" className="hover:text-[#24AB70]">Espacios</Link>
-        <Link to="/booked/usuario" className="hover:text-[#24AB70]">Reservas</Link>
+        <Link to="/booked" className="hover:text-[#24AB70]">Reservas</Link>
         <Link to="" className="hover:text-[#24AB70]">Recursos</Link>
         <Link to="" className="hover:text-[#24AB70]">Sobre nosotros</Link>
         <Link to="" className="hover:text-[#24AB70]">Contáctanos</Link>

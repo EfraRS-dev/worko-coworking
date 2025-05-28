@@ -4,6 +4,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Booked = () => {
   const [reservations, setReservations] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -25,7 +27,7 @@ const Booked = () => {
         }
 
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/reservas/usuario', {
+        const response = await fetch(`${API_URL}/api/reservas/usuario`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -41,7 +43,7 @@ const Booked = () => {
         const reservationsWithDetails = await Promise.all(
           data.map(async (reservation) => {
             try {
-              const spaceResponse = await fetch(`http://localhost:5000/api/espacios/${reservation.id_espacio}`);
+              const spaceResponse = await fetch(`${API_URL}/api/espacios/${reservation.id_espacio}`);
               if (spaceResponse.ok) {
                 const spaceData = await spaceResponse.json();
                 return { ...reservation, space: spaceData };
@@ -75,8 +77,8 @@ const Booked = () => {
     try {
       setDeleteLoading(id);
       const token = localStorage.getItem('token');
-      
-      const response = await fetch(`http://localhost:5000/api/reservas/${id}`, {
+
+      const response = await fetch(`${API_URL}/api/reservas/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function Bookings() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -24,8 +26,8 @@ export default function Bookings() {
     const fetchSpaceDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/api/espacios/${id}`);
-        
+        const response = await fetch(`${API_URL}/api/espacios/${id}`);
+
         if (!response.ok) {
           throw new Error('No se pudo cargar la información del espacio');
         }
@@ -124,8 +126,8 @@ export default function Bookings() {
       // Obtener el ID del usuario del token
       // Nota: En una app real, deberías decodificar el token o usar un contexto de autenticación
       // Para simplificar, asumimos que el backend extraerá el ID del usuario del token
-      
-      const response = await fetch('http://localhost:5000/api/reservas', {
+
+      const response = await fetch(`${API_URL}/api/reservas`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

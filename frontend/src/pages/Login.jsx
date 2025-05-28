@@ -2,6 +2,8 @@ import { useState } from 'react'
 import PasswordInput from "../components/PasswordInput"
 import { useNavigate, Link } from 'react-router-dom'
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 export default function Login() {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -40,7 +42,7 @@ export default function Login() {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/usuarios/login', {
+      const response = await fetch(`${API_URL}/api/usuarios/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

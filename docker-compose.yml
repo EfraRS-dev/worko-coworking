@@ -39,6 +39,8 @@ services:
     build: ./frontend
     container_name: worko_frontend
     restart: always
+    environment:
+      - VITE_API_URL=http://backend:5000
     ports:
       - "5173:5173"
     depends_on:
