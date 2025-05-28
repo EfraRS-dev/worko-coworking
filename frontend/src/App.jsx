@@ -14,6 +14,7 @@ export default function App() {
         <Route path="/landing" element={<Landing />} />
         <Route path="/spaces" element={<Spaces />} />
         <Route path="/bookings" element={<Bookings />} />
+        <Route path="/bookings/:id" element={<Bookings />} />
       </Routes>
     </BrowserRouter>
   )

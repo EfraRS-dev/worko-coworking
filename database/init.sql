@@ -36,11 +36,11 @@ CREATE TABLE reserva (
 );
 
 -- Seed data for usuarios (users)
--- Note: passwords are hashed with bcrypt, both are 'password123'
 INSERT INTO usuario (name, email, password, type) VALUES 
 ('Admin User', 'admin@worko.com', '$2a$10$xVR.Lc9b0nP.z6JmGLGIZu9XDTLlzJ8Ld5zBJT1RBumZ1tpNtjB1a', 'admin'),
 ('Regular User', 'user@worko.com', '$2a$10$xVR.Lc9b0nP.z6JmGLGIZu9XDTLlzJ8Ld5zBJT1RBumZ1tpNtjB1a', 'user'),
 ('Efrain Rada', 'eradaa@uninorte.edu.co', '$2b$10$jvBeds3fKjHdIvgJq2JIc.bGnCLrmJJ1ZP4mHKYqfYVJkxTk/EV42', 'admin');
+-- Password from Rada is '12345678'
 
 -- Seed data for espacios (spaces)
 INSERT INTO espacio (name, type, location, capacity, cost_per_hour) VALUES 

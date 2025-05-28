@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 
-export default function PasswordInput() {
+export default function PasswordInput({ onChange }) {
   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+    
+    // Call the parent's onChange handler with the new value
+    if (onChange) {
+      onChange(value);
+    }
+  };
 
   return (
     <div className="relative">
       <input
         type={showPassword ? "text" : "password"}
+        value={password}
+        onChange={handleChange}
         placeholder="Enter your password"
         className="w-full px-4 py-2 border border-gray-300 rounded-md pr-10"
+        required
       />
       <button
         type="button"
