@@ -2,7 +2,7 @@ services:
   db:
     image: postgres:15
     container_name: worko_db
-    restart: always
+    restart: no
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -17,7 +17,7 @@ services:
   backend:
     build: ./backend
     container_name: worko_backend
-    restart: always
+    restart: no
     environment:
       DB_HOST: db
       DB_USER: postgres
@@ -36,7 +36,7 @@ services:
   frontend:
     build: ./frontend
     container_name: worko_frontend
-    restart: always
+    restart: no
     environment:
       - VITE_API_URL=http://localhost:5000
     ports:
